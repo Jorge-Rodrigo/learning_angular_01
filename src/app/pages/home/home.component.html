@@ -1,3 +1,11 @@
 <div>
     <h1>Home</h1>
+    <p>{{ example }}</p>
+
+   <app-cards [name]="userA.name"
+   [email]="userA.email"
+   [job]="userA.job"></app-cards>
+   <app-cards [name]="userB.name"
+   [email]="userB.email"
+   [job]="userB.job"></app-cards>
 </div>
