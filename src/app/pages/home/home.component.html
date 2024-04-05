@@ -2,10 +2,8 @@
     <h1>Home</h1>
     <p>{{ example }}</p>
 
-   <app-cards [name]="userA.name"
-   [email]="userA.email"
-   [job]="userA.job"></app-cards>
-   <app-cards [name]="userB.name"
-   [email]="userB.email"
-   [job]="userB.job"></app-cards>
+   <app-cards *ngFor="let user of userList"
+   [name]="user.name"
+   [email]="user.email"
+   [job]="user.job"></app-cards>
 </div>
