@@ -1,23 +1,22 @@
 import { Component } from '@angular/core';
 import { CardsComponent } from '../../components/cards/cards.component';
 import { CommonModule } from '@angular/common';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [CardsComponent,CommonModule],
+  providers: [UserService],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-    example = "Bem Vindo"
-    userList = [
-      { name: 'Alex', email: 'alex@email.com', job: 'Instrutor de Programação' },
-      { name: 'Osvaldo', email: 'osvaldo@email.com', job: 'Estudante' },
-      {
-        name: 'Maria',
-        email: 'maria@email.com',
-        job: 'Desenvolvedora Front-end',
-      },
-    ];
+  example = "Bem Vindo"
+   
+  constructor(private userService: UserService) {}
+
+  getUserList(){
+    return this.userService.userList
+  }
 }
